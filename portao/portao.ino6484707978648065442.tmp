@@ -1,0 +1,46 @@
+/*
+ * Assim cada bit será transmitido em 1500 us.
+ * O código completo compreende 4 partes principais: Piloto, Endereço, Dado e Anti-Código.
+– O Piloto é formado por 23 ciclos de “0” e um ciclo de “1”.
+– O Endereço é formado por 22 bits (66 ciclos);
+– O Dado é formado por 2 bits (6 ciclos).
+– O Anti-Código é formado por 4 bits (12 ciclos) sendo sempre “0101”.
+
+ * 
+ */
+#define tempo = 500
+void setup() {
+  // put your setup code here, to run once:
+
+}
+//codigo do controle 2AF0F9
+void loop() {
+
+
+}
+//
+void startbit(void){
+//enviar 0
+delayMicroseconds(11500); //23x500;
+//enviar 1
+delayMicroseconds(tempo);
+  }
+  
+void bits(int x){
+if(x==0)
+//enviar 0
+if(x==1)
+//enviar 1
+delayMicroseconds(tempo);
+}
+
+void anti(void){
+//enviar 0
+delayMicroseconds(tempo);
+//enviar 1
+delayMicroseconds(tempo);
+//enviar 0
+delayMicroseconds(tempo);
+//enviar 1
+delayMicroseconds(tempo);
+}
